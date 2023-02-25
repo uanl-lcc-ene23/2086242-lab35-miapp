@@ -26,10 +26,13 @@ input{
     font-family: Arial, Helvetica;
     font-size: 14px;
 }
-.clase1{
-    /* Aplicamos estilo para una clase */
+
+@media screen and (min-width: 700px){
+    .botones{
+        width: 100%;
+    }
 }
 
-#campoTexto{
-    /* Aplicamos estilo para un id */
+.botones{
+    width: 20%;
 }
