@@ -7,22 +7,36 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     </head>
     <body>
-        <div class="contenedor">
-            <label for="usuario">Usuario</label>
-            <input type="text" id="usuario"/>
+        <ion-app>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Mi aplicacion</ion-title>
+                </ion-toolbar>
+            </ion-header>
 
-            <label for="password">Password</label>
-            <input type="password" id="campoPassword"/>
-            <span id="vistaPassword" onclick="togglePassword()">Ver password</span>
+            <ion-content class="ion-padding">
+                <h1>Main Content</h1>
+                <div class="fila">
+                    <ion-label for="tipo-gasto">Tipo de gasto:</ion-label>
+                    <ion-input type="text" id="tipo-gasto"></ion-input>
+                </div>
+                <div class="fila">
+                    <ion-label for="monto">Monto:</ion-label>
+                    <ion-input type="text1" id="monto" value=""></ion-input>
+                </div>
+                <div class="fila">
+                    <ion-button onclick="guardar()">Guardar</ion-button>
+                </div>
 
-            <div class="fila botones">
-                <button onclick="login()">Login</button>
-                <button onclick="registro()">Registrarme</button>
-            </div>
-            <p id="mensaje"></p>
-        </div>
+                <ion-list [inset]="true" id="lista">
+                </ion-list>
+            </ion-content>
+        </ion-app>
     </body>
     <script src="js/imprimir.js"></script>
 </html>

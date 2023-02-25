@@ -1,32 +1,35 @@
-let usuarioTXT = document.getElementById("usuario");
-let passwordTXT = document.getElementById("campoPassword");
-let p = document.getElementById("mensaje");
+let tipoGasto = document.getElementById("tipo-gasto");
+let monto = document.getElementById("monto");
 
+let campos = [];
 
-function togglePassword(){
-    var campo = document.getElementById("campoPassword");
-    var mensaje = document.getElementById("vistaPassword");
-
-    if(campo.type == "password"){
-        campo.type = "text";
-        mensaje.textContent = "Ocultar Password";
+function guardar(){
+    if(monto.value != "" && tipoGasto.value != ""){
+        campos.push(tipoGasto.value + ": " + monto.value);
+        actualizarLista();
+        limpiar();
     } else{
-        campo.type = "password";
-        mensaje.textContent = "Mostrar Password";
+        presentAlert("No puedes guardar valores vacíos.");
     }
 }
 
-function login(){
-    p.innerHTML = "Login correcto, " + usuarioTXT.value;
-    limpiar();
-}
+async function presentAlert(mensaje) {
+    const alert = document.createElement('ion-alert');
+    alert.header = 'Alerta';
+    alert.message = mensaje;
+    alert.buttons = ['OK'];
 
-function registro(){
-    p.innerHTML = "Registro correcto, " + usuarioTXT.value;
-    limpiar();
-}
+    document.body.appendChild(alert);
+    await alert.present();
+  }
 
 function limpiar(){
-    usuarioTXT.value = "";
-    passwordTXT.value = "";
+    monto.value = "";
+    tipoGasto.value = "";
+}
+
+function actualizarLista(){
+    var node = document.createElement('ion-item');
+    node.innerHTML = "<ion-label>" + campos[campos.length -1] + "</ion-label>";
+    document.getElementById("lista").appendChild(node);
 }
