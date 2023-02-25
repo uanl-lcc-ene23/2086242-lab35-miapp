@@ -14,22 +14,24 @@ button{
     font-size: 13px;
 }
 
-.contenedor{
-    width: 80%;
-    height: 80%;
-    margin: 0 auto;
-    background-color: #8ecae6;
-    padding: 15px;
+.fila{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-input{
+ion-input{
     font-family: Arial, Helvetica;
     font-size: 14px;
-}
-.clase1{
-    /* Aplicamos estilo para una clase */
+    background-color: #f0f0ff !important;
+    border-style: solid;
 }
 
-#campoTexto{
-    /* Aplicamos estilo para un id */
+@media screen and (min-width: 700px){
+    .botones{
+        width: 100%;
+    }
+}
+
+.botones{
+    width: 20%;
 }

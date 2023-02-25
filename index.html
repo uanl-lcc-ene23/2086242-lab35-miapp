@@ -7,21 +7,36 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+        <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     </head>
     <body>
-        <div class="contenedor">
-            <h1>Un titulo</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.</p>
-            <input type="text" id="campoTexto"/>
-            <button onclick="imprimir()">Imprimir Mensaje en Consola</button>
-            <button onclick="limpiar()">Limpiar el campo de texto</button>
-        </div>
+        <ion-app>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Mi aplicacion</ion-title>
+                </ion-toolbar>
+            </ion-header>
+
+            <ion-content class="ion-padding">
+                <h1>Main Content</h1>
+                <div class="fila">
+                    <ion-label for="tipo-gasto">Tipo de gasto:</ion-label>
+                    <ion-input type="text" id="tipo-gasto"></ion-input>
+                </div>
+                <div class="fila">
+                    <ion-label for="monto">Monto:</ion-label>
+                    <ion-input type="text1" id="monto" value=""></ion-input>
+                </div>
+                <div class="fila">
+                    <ion-button onclick="guardar()">Guardar</ion-button>
+                </div>
+
+                <ion-list [inset]="true" id="lista">
+                </ion-list>
+            </ion-content>
+        </ion-app>
     </body>
     <script src="js/imprimir.js"></script>
 </html>
