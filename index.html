@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Práctica 1</title>
+        <title>Práctica 5</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -13,29 +13,53 @@
     </head>
     <body>
         <ion-app>
-            <ion-header>
-                <ion-toolbar>
-                    <ion-title>Mi aplicacion</ion-title>
-                </ion-toolbar>
-            </ion-header>
+            <ion-menu content-id="pagina-principal" type="reveal">
+                <ion-header>
+                    <ion-title>Hola, menu</ion-title>
+                </ion-header>
+                <ion-content class="ion-padding">
+                    <ion-list>
+                        <ion-list-header>
+                            Navegacion principal
+                        </ion-list-header>
 
-            <ion-content class="ion-padding">
-                <h1>Main Content</h1>
-                <div class="fila">
-                    <ion-label for="tipo-gasto">Tipo de gasto:</ion-label>
-                    <ion-input type="text" id="tipo-gasto"></ion-input>
-                </div>
-                <div class="fila">
-                    <ion-label for="monto">Monto:</ion-label>
-                    <ion-input type="text1" id="monto" value=""></ion-input>
-                </div>
-                <div class="fila">
-                    <ion-button onclick="guardar()">Guardar</ion-button>
-                </div>
+                        <ion-menu-toggle>
+                        <ion-item button>
+                            <ion-icon name="home" style="padding-right:10px;"></ion-icon> Volver al inicio
+                        </ion-item>
+                        </ion-menu-toggle>
 
-                <ion-list [inset]="true" id="lista">
-                </ion-list>
-            </ion-content>
+                    </ion-list>
+                </ion-content>
+            </ion-menu>
+            <div class="ion-page" id="pagina-principal">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-buttons slot="start">
+                            <ion-menu-button></ion-menu-button>
+                        </ion-buttons>
+                        <ion-title>Presupuesto</ion-title>
+                    </ion-toolbar>
+                </ion-header>
+
+                <ion-content class="ion-padding">
+                    <h1>Main Content</h1>
+                    <div class="fila">
+                        <ion-label for="tipo-gasto">Tipo de gasto:</ion-label>
+                        <ion-input type="text" id="tipo-gasto"></ion-input>
+                    </div>
+                    <div class="fila">
+                        <ion-label for="monto">Monto:</ion-label>
+                        <ion-input type="text1" id="monto" value=""></ion-input>
+                    </div>
+                    <div class="fila">
+                        <ion-button onclick="guardar()">Guardar</ion-button>
+                    </div>
+
+                    <ion-list [inset]="true" id="lista">
+                    </ion-list>
+                </ion-content>
+            </div>
         </ion-app>
     </body>
     <script src="js/imprimir.js"></script>
